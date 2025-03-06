@@ -13,20 +13,18 @@ import {
   UploadedFile,
   UseInterceptors,
 } from '@nestjs/common';
-import FormData from 'form-data';
-import axios from 'axios';
-import * as fs from 'fs';
-import * as path from 'node:path';
-import { v4 as uuidv4 } from 'uuid';
-import * as process from 'node:process';
-import extract from 'extract-zip';
-import { FileInterceptor } from '@nestjs/platform-express';
-import { diskStorage } from 'multer';
-import { Response } from 'express';
-import { Model } from 'mongoose';
-import { Token } from './entities/token.schema';
 import { InjectModel } from '@nestjs/mongoose';
+import { FileInterceptor } from '@nestjs/platform-express';
+import { Response } from 'express';
+import extract from 'extract-zip';
+import * as fs from 'fs';
+import { Model } from 'mongoose';
+import { diskStorage } from 'multer';
+import * as path from 'node:path';
+import * as process from 'node:process';
 import puppeteer from 'puppeteer';
+import { v4 as uuidv4 } from 'uuid';
+import { Token } from './entities/token.schema';
 
 @Controller('generate')
 export class GenerateController {
